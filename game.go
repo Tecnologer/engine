@@ -26,9 +26,9 @@ type Game interface {
 	//SayUno the current player says UNO
 	SayUno(Player)
 	//GetDirection returns the current direction of the game
-	GetDirection() string
+	GetDirection() Direction
 	//SetDirection changes the current direction of the game
-	SetDirection(string)
+	SetDirection(Direction)
 	//Close closes the output channel, so closes the game
 	Close()
 }
