@@ -2,7 +2,7 @@ package engine
 
 type Game interface {
 	//New creates a new instance the output channel of the game
-	New() (chan Result, error)
+	New() error
 	//GetMetadata returns the Metadata of the game
 	GetMetadata() Metadata
 	//Start selects the first card and the first player
@@ -17,6 +17,8 @@ type Game interface {
 	DrawCard() Card
 	//PlayCard players plays a card
 	PlayCard(Player, Card) error
+	//AddPlayers registers a player to the game, the string represents the name of the player
+	AddPlayer(string) error
 	//GetPlayers returns the list of players registered on the game
 	GetPlayers() []Player
 	//GetCurrentPlayer returns the player that is his turn
